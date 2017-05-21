@@ -50,3 +50,4 @@ int PolKom(int i)
 i=Pol(i);
 return kom[i]==i ? i : kom[i]=PolKom(kom[i]);
 }
+f
