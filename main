@@ -26,3 +26,27 @@ cout<<endl;
 system("pause");
 return 0;
 }
+
+void Zapol()
+{
+for(int j=0;j<n;j++)
+{
+dod[j]=kom[j]=j;
+razm[j]=1;
+osnova[j]=-1;
+}
+most=0;
+}
+
+int Pol(int i)
+{
+if(i==-1)
+return -1;
+return (dod[i]==i) ? i : dod[i]=Pol(dod[i]);
+}
+
+int PolKom(int i)
+{
+i=Pol(i);
+return kom[i]==i ? i : kom[i]=PolKom(kom[i]);
+}
