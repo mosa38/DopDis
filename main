@@ -65,3 +65,51 @@ i=g;
 }
 razm[der]=razm[sin];
 }
+
+void Obyed(int k,int l)
+{
+int dl=-1;
+vector<int> z,x;
+++per;
+for (int j=0;j<n;j++)
+{
+if(k!=-1)
+{
+k=Pol(k);
+z.push_back(k);
+if (mas[k]==per)
+{
+dl=k;
+break;
+}
+mas[k]=per;
+k=osnova[k];
+}
+if (l!=-1)
+{
+l=Pol(l);
+x.push_back(l);
+if (mas[l]==per)
+{
+dl=l;
+break;
+}
+mas[l]=per;
+l=osnova[l];
+}
+}
+for (size_t j=0;j<z.size();++j)
+{
+dod[z[j]]=dl;
+if (z[j]==dl)
+break;
+--most;
+}
+for(size_t j=0;j<x.size();++j)
+{
+dod[x[j]]=dl;
+if (x[j]==dl)
+break;
+--most;
+}
+}
