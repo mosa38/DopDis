@@ -50,4 +50,18 @@ int PolKom(int i)
 i=Pol(i);
 return kom[i]==i ? i : kom[i]=PolKom(kom[i]);
 }
-f
+
+void SozKor( int i)
+{
+int der=i,sin=-1;
+i=Pol(i);
+while (i!=-1)
+{
+int g =Pol(osnova[i]);
+osnova[i]=sin;
+kom[i]=der;
+sin=i;
+i=g;
+}
+razm[der]=razm[sin];
+}
