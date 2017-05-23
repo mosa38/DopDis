@@ -113,3 +113,46 @@ break;
 --most;
 }
 }
+
+void DobRebr(int i,int j)
+{
+int s=PolKom(i),d=PolKom(j);
+i=Pol(i);
+j=Pol(j);
+if(i==j)
+return;
+if(s!=d)
+{
+++most;
+if(razm[s]>razm[d])
+{
+swap(i,j);
+swap(s,d);
+}
+SozKor(i);
+osnova[i]=kom[i]=j;
+razm[d]+=razm[i];
+}
+else
+Obyed(i,j);
+}
+
+void Input()
+{
+ifstream fin("input.txt");
+fin>>n>>m;
+osnova=new int[n];
+dod=new int[n];
+kom=new int[n];
+razm=new int[n];
+mas=new int[n];
+Zapol();
+for (int i=0;i<m;i++)
+{
+int u,v;
+fin>>u>>v;
+--u; --v;
+DobRebr(u,v);
+}
+fin.close();
+}
